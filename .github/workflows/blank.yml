@@ -15,8 +15,8 @@ jobs:
           ACTIONS_DEPLOY_KEY: ${{ secrets.HuaweiCloud }}
           HOST: huawei.yiwangchunyu.wang
           USER: root
+          SSH_PATH: "$HOME/.ssh"
         run: |
-          SSH_PATH="$HOME/.ssh"
           mkdir -p $SSH_PATH
           touch "$SSH_PATH/known_hosts"
           echo "$ACTIONS_DEPLOY_KEY" > "$SSH_PATH/id_rsa"
