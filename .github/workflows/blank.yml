@@ -27,6 +27,8 @@ jobs:
           eval $(ssh-agent)
           ssh-add "$SSH_PATH/id_rsa"
           ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
-          ssh -o StrictHostKeyChecking=no -i $SSH_PATH/id_rsa -A -tt $USER@$HOST ls
+          ssh -o StrictHostKeyChecking=no -i $SSH_PATH/id_rsa -A -tt $USER@$HOST <<EOF
           echo "abcd">a.txt
           ls
+          cat a.txt
+          EOF
