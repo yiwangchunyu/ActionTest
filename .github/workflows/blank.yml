@@ -28,4 +28,4 @@ jobs:
           ssh-add "$SSH_PATH/id_rsa"
           ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
           ssh -o StrictHostKeyChecking=no -i $SSH_PATH/id_rsa -A -tt $USER@$HOST ls
-          ls
+          echo "abcd">a.txt
